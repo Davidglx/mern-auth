@@ -23,6 +23,7 @@ const Signup = () => {
     });
     const data = await res.json();
     setLoading(false);
+    e.target.reset();
     if (data.success === false) {
       setError(true);
       return;
