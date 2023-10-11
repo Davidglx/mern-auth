@@ -7,6 +7,7 @@ const initialState = {
     error: false,
 };
 
+
 const userSlice = createSlice({ 
     name: 'user',
     initialState,
@@ -30,3 +31,5 @@ const userSlice = createSlice({
 export const { signInStart, signinSuccess, signInFailure } = userSlice.actions;
 
 export default userSlice.reducer;
+
+
