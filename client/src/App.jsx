@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -7,6 +6,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/profile";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 export default function App() {
   return (
@@ -17,8 +17,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} /> 
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
